@@ -1,0 +1,289 @@
+.subtopic-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.subtopic-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.topic-ref {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.separator {
+  color: #9ca3af;
+  font-weight: bold;
+}
+
+.subtopic-id {
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.subtopic-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.content-body {
+  line-height: 1.7;
+}
+
+.overview-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid #0284c7;
+  margin-bottom: 2rem;
+}
+
+.overview-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0c4a6e;
+  margin-bottom: 1rem;
+}
+
+.overview-text {
+  color: #0369a1;
+  font-size: 1.125rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.examples-section, .details-section, .benefits-section, 
+.criteria-section, .scenarios-section, .limitations-section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.examples-section h2, .details-section h2, .benefits-section h2,
+.criteria-section h2, .scenarios-section h2, .limitations-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d1d5db;
+}
+
+.examples-list, .details-list, .benefits-list,
+.criteria-list, .scenarios-list, .limitations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.example-item, .detail-item, .benefit-item,
+.criterion-item, .scenario-item, .limitation-item {
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  color: #374151;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.example-item:hover, .detail-item:hover, .benefit-item:hover,
+.criterion-item:hover, .scenario-item:hover, .limitation-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.limitation-item {
+  border-left-color: #ef4444;
+}
+
+.limitation-example {
+  background: #fee2e2;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.advantages-section, .domains-section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: #fefbf0;
+  border-radius: 12px;
+  border: 1px solid #fbbf24;
+}
+
+.advantages-section h2, .domains-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #fbbf24;
+}
+
+.advantages-grid, .domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.advantage-card, .domain-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #fbbf24;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.advantage-card:hover, .domain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card h3, .domain-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 0.75rem;
+}
+
+.advantage-card p, .domain-card p {
+  color: #78350f;
+  margin-bottom: 1rem;
+}
+
+.advantage-example, .domain-example {
+  background: #fef3c7;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 3px solid #f59e0b;
+  color: #92400e;
+  font-size: 0.875rem;
+}
+
+.advantage-example strong, .domain-example strong {
+  color: #78350f;
+}
+
+.detailed-content {
+  margin-bottom: 2rem;
+}
+
+.table-section {
+  margin: 2rem 0;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 0.85rem 1.2rem;
+  text-align: left;
+}
+
+.comparison-table th {
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 700;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.comparison-table td {
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.benefits-section, .usecases-section, .summary-section {
+  margin: 2rem 0;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.benefits-section h2, .usecases-section h2, .summary-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.benefits-list, .usecases-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.benefits-list li, .usecases-list li {
+  margin-bottom: 0.5rem;
+  color: #047857;
+  font-weight: 500;
+}
+
+.summary-section p {
+  color: #374151;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .subtopic-content {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .subtopic-title {
+    font-size: 1.75rem;
+  }
+  
+  .breadcrumb {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .advantages-grid, .domains-grid {
+    grid-template-columns: 1fr;
+  }
+}
