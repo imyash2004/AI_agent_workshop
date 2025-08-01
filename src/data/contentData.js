@@ -300,6 +300,75 @@ export const contentData = {
       id: "2",
       title: "Why Agents Over Traditional LLMs?",
       duration: "6 minutes",
+      detailedContent: {
+        mainDescription: "Large Language Models (LLMs) like GPT-4 have revolutionized AI through their ability to understand and generate human-like language. However, traditional LLM usage is often limited to isolated, single-turn interactions. While impressive, these models lack critical capabilities needed for real-world task execution.<br><br>AI agents overcome these limitations by wrapping LLMs with <strong>memory, planning, decision-making, and tool-usage mechanisms</strong>—allowing them to perform complex, goal-driven tasks across time and context.",
+        sections: [
+          {
+            title: "Limitations of Traditional LLM Interactions",
+            description: "LLMs excel at:",
+            points: [
+              "Language comprehension",
+              "Text generation", 
+              "Question answering"
+            ],
+            summary: "But they fall short in the following ways:"
+          },
+          {
+            title: "How Agents Extend LLMs",
+            description: "Agents incorporate the power of LLMs but enhance them with:",
+            points: [
+              "<strong>Autonomy</strong> – Agents operate independently to pursue goals.",
+              "<strong>Memory</strong> – Agents remember prior context, inputs, and actions.",
+              "<strong>Planning Modules</strong> – Agents decompose complex tasks into actionable steps.",
+              "<strong>Tool Integration</strong> – Agents access and interact with databases, APIs, search engines, and local systems.",
+              "<strong>Control Flow</strong> – Agents can make conditional decisions, repeat actions, and evaluate outcomes."
+            ]
+          }
+        ],
+        limitationsTable: {
+          headers: ["Limitation", "Impact"],
+          rows: [
+            ["No memory across interactions", "Cannot retain context from one interaction to the next"],
+            ["No planning ability", "Cannot break down or sequence multi-step tasks"],
+            ["No tool use", "Cannot access external data or perform real-world actions"],
+            ["No persistent learning", "Cannot improve based on previous results"],
+            ["Lacks execution control", "Cannot manage dynamic logic, loops, or fallback decisions"]
+          ]
+        },
+        comparisonTable: {
+          title: "Why Agents Are Preferable in Practice",
+          headers: ["Capability", "Traditional LLM", "AI Agent System"],
+          rows: [
+            ["Answer factual question", "✅", "✅"],
+            ["Perform web search", "❌", "✅ (via integrated tools)"],
+            ["Handle multi-step processes", "❌", "✅ (via planning and memory)"],
+            ["Adapt to changing conditions", "❌", "✅ (via feedback loops)"],
+            ["Execute API/database actions", "❌", "✅"],
+            ["Monitor, retry, or escalate", "❌", "✅"]
+          ]
+        },
+        practicalExample: {
+          title: "Practical Example: Market Research Task",
+          headers: ["Step", "LLM (Standalone)", "Agent-Based Approach"],
+          rows: [
+            ["Get company info", "Generates a summary", "Fetches live data from external APIs"],
+            ["Compare competitors", "Requires manual input", "Scrapes and compares multiple sources"],
+            ["Generate insights", "One-shot summary", "Aggregates insights, formats into report"],
+            ["Revise based on feedback", "Needs manual re-prompting", "Iterates and improves output automatically"]
+          ]
+        },
+        strategicImportance: {
+          title: "Strategic Importance of Agents",
+          description: "The shift from passive LLMs to autonomous agents represents a paradigm change in how we use AI:",
+          points: [
+            "From generating answers, to accomplishing objectives",
+            "From human-in-the-loop, to human-on-the-loop supervision",
+            "From isolated prompts, to continuous intelligent workflows"
+          ],
+          impact: "This transformation opens up new possibilities in automation, productivity, research, and software engineering."
+        },
+        summary: "While LLMs are powerful reasoning engines, they lack the structure and control required for real-world task execution. AI agents address this gap by combining LLMs with planning, memory, tool access, and autonomy—making them significantly more capable, adaptable, and useful across domains."
+      },
       subsections: [
         {
           id: "2.1",
@@ -312,6 +381,64 @@ export const contentData = {
               "No persistent learning or improvement"
             ],
             example: "ChatGPT can't remember your previous projects or learn your preferences"
+          }
+          ,
+          detailedContent: {
+            mainDescription: "Single-shot interactions refer to the traditional use of Large Language Models (LLMs) where the model is prompted once and responds immediately without maintaining memory, learning from the outcome, or taking further action. While effective for generating natural language, this interaction style has significant limitations for complex, real-world tasks.",
+            points: [
+              {
+                title: "1. No Memory Across Sessions",
+                description: "LLMs do not retain context between prompts unless explicitly provided in the input. This means:",
+                bullets: [
+                  "The model cannot remember user preferences, past decisions, or earlier conversations.",
+                  "Every interaction starts from scratch, requiring full re-specification of the problem."
+                ],
+                example: "If you ask a model to summarize a report and then later say ‘add that to the previous summary,’ it won’t know what ‘previous’ refers to unless you include the full history again.",
+                result: "Inefficiency and repetition in user interaction."
+              },
+              {
+                title: "2. Lack of Persistent Goal Tracking",
+                description: "Single-shot LLMs do not track progress toward a goal or manage state. They:",
+                bullets: [
+                  "Cannot monitor which tasks have been completed.",
+                  "Cannot manage subtasks or respond to intermediate results."
+                ],
+                example: "A traditional LLM cannot keep track of which parts of a research report are done, which sections need revision, or how to merge outputs over time.",
+                result: "Poor suitability for multi-step processes."
+              },
+              {
+                title: "3. Inability to Execute or Interact with Tools",
+                description: "LLMs in single-shot use:",
+                bullets: [
+                  "Do not access external APIs or databases.",
+                  "Cannot browse the web or perform calculations dynamically.",
+                  "Cannot automate actions such as sending emails, updating records, or scraping websites."
+                ],
+                example: "If you ask a standalone LLM to ‘book the next available flight to Delhi,’ it can generate sample responses but cannot query flight data or take real action.",
+                result: "They remain confined to the text-generation layer with no operational impact."
+              },
+              {
+                title: "4. No Self-Correction or Feedback Loops",
+                description: "Standalone LLMs:",
+                bullets: [
+                  "Do not evaluate their own output.",
+                  "Cannot retry or improve if the result is incomplete or inaccurate.",
+                  "Do not revise based on real-time feedback or constraints."
+                ],
+                example: "If a generated answer contains an error, the LLM does not know unless the user identifies and corrects it.",
+                result: "Human oversight is required at every step for validation and revision."
+              },
+              {
+                title: "5. No Learning from Task History",
+                description: "LLMs do not retain long-term knowledge of prior experiences. They:",
+                bullets: [
+                  "Do not adapt over time based on outcomes.",
+                  "Cannot optimize behavior across multiple sessions or projects."
+                ],
+                example: "A content generation tool based on an LLM won’t learn your brand tone or style unless retrained or manually fine-tuned.",
+                result: "Lack of personalization and long-term efficiency."
+              }
+            ]
           }
         },
         {

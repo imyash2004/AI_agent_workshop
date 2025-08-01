@@ -49,6 +49,109 @@ const TopicOverview = ({ topic, onSubtopicClick }) => {
             </div>
           )}
 
+          {topic.detailedContent.limitationsTable && (
+            <div className="limitations-table-section">
+              <h2>LLM Limitations and Their Impact</h2>
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    {topic.detailedContent.limitationsTable.headers.map((header, index) => (
+                      <th key={index}>{header}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {topic.detailedContent.limitationsTable.rows.map((row, index) => (
+                    <tr key={index}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={cellIndex}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="table-note">These limitations restrict LLMs to static, one-time answers, making them unsuitable for tasks requiring decision-making, iteration, or environmental feedback.</p>
+            </div>
+          )}
+
+          {/* {topic.id === "2" && (
+            <div className="agentic-advantages-intro">
+              <h1>2.2 Agentic Advantages Comparison</h1>
+              <p>
+                AI agents represent a significant advancement over traditional LLM interfaces by enabling structured, goal-driven, and adaptable task execution. This section highlights the key comparative advantages that make agents more suitable for real-world applications.
+              </p>
+            </div>
+          )} */}
+
+          {topic.detailedContent.comparisonTable && (
+            <div className="comparison-table-section">
+              <h2>{topic.detailedContent.comparisonTable.title}</h2>
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    {topic.detailedContent.comparisonTable.headers.map((header, index) => (
+                      <th key={index}>{header}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {topic.detailedContent.comparisonTable.rows.map((row, index) => (
+                    <tr key={index}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={cellIndex} dangerouslySetInnerHTML={{ __html: cell }}></td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {topic.detailedContent.practicalExample && (
+            <div className="practical-example-section">
+              <h2>{topic.detailedContent.practicalExample.title}</h2>
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    {topic.detailedContent.practicalExample.headers.map((header, index) => (
+                      <th key={index}>{header}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {topic.detailedContent.practicalExample.rows.map((row, index) => (
+                    <tr key={index}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={cellIndex}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="example-note">In this scenario, an agent is not just a responder—it's a functional, context-aware assistant capable of performing meaningful actions over time.</p>
+            </div>
+          )}
+
+          {topic.detailedContent.strategicImportance && (
+            <div className="strategic-importance-section">
+              <h2>{topic.detailedContent.strategicImportance.title}</h2>
+              <p dangerouslySetInnerHTML={{ __html: topic.detailedContent.strategicImportance.description }}></p>
+              <ul className="strategic-points">
+                {topic.detailedContent.strategicImportance.points.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+              <p className="strategic-impact" dangerouslySetInnerHTML={{ __html: topic.detailedContent.strategicImportance.impact }}></p>
+            </div>
+          )}
+
+          {topic.detailedContent.summary && (
+            <div className="content-summary">
+              <h2>Summary</h2>
+              <p dangerouslySetInnerHTML={{ __html: topic.detailedContent.summary }}></p>
+            </div>
+          )}
+
           {topic.detailedContent.impact && (
             <div className="impact-section">
               <h2>{topic.detailedContent.impact.title}</h2>
@@ -63,6 +166,11 @@ const TopicOverview = ({ topic, onSubtopicClick }) => {
           )}
         </div>
       )}
+
+      <div className="overview-section">
+        <h2>Overview</h2>
+        <p>Key advantages that agents provide over traditional LLMs</p>
+      </div>
 
       <div className="section-overview">
         <div className="overview-header">

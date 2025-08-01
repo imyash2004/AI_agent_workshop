@@ -320,6 +320,201 @@
   font-size: 0.95rem;
 }
 
+/* New sections for topic 2 specific content */
+.limitations-table-section,
+.comparison-table-section,
+.practical-example-section,
+.strategic-importance-section,
+.content-summary {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.limitations-table-section h2,
+.comparison-table-section h2,
+.practical-example-section h2,
+.strategic-importance-section h2,
+.content-summary h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-weight: 500;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.comparison-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+.table-note,
+.example-note {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.strategic-points {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.strategic-points li {
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+  color: #374151;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.strategic-impact {
+  background: #dcfdf7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+  color: #047857;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+.content-summary {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+}
+
+.agentic-advantages-intro {
+  background: linear-gradient(90deg, #e9e6ff 0%, #f5f7ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(80, 80, 180, 0.10);
+  padding: 40px 40px 28px 40px;
+  margin-bottom: 40px;
+  border-left: 8px solid #7c6cf0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.agentic-advantages-intro h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #5a4fcf;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.agentic-advantages-intro p {
+  font-size: 1.18rem;
+  color: #3a3a3a;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.scalability-efficiency-intro {
+  background: linear-gradient(90deg, #e0f7fa 0%, #f5f7ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(80, 180, 180, 0.10);
+  padding: 40px 40px 28px 40px;
+  margin-bottom: 40px;
+  border-left: 8px solid #10b981;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.scalability-efficiency-intro h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #089981;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.scalability-efficiency-intro p {
+  font-size: 1.15rem;
+  color: #3a3a3a;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.scalability-benefits-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.scalability-benefit {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.07);
+  border-left: 5px solid #10b981;
+  padding: 24px 28px;
+}
+
+.scalability-benefit h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #089981;
+  margin-bottom: 10px;
+}
+
+.scalability-benefit p {
+  font-size: 1.08rem;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.benefit-example {
+  background: #e0f2fe;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #065f46;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.benefit-note {
+  color: #6366f1;
+  font-size: 0.98rem;
+  margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
   .topic-overview {
     padding: 1rem;
@@ -343,5 +538,22 @@
   .overview-header {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .comparison-table {
+    font-size: 0.875rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75rem;
+  }
+
+  .limitations-table-section,
+  .comparison-table-section,
+  .practical-example-section,
+  .strategic-importance-section,
+  .content-summary {
+    padding: 1.5rem;
   }
 }

@@ -37,6 +37,31 @@ const SubtopicContent = ({ subtopic, topicTitle }) => {
                 )}
               </div>
             ))}
+
+            {/* Render custom points for 2.1 and similar detailedContent */}
+            {detailedContent.points && Array.isArray(detailedContent.points) && (
+              <div className="subtopic-llm-limitations">
+                {detailedContent.points.map((point, idx) => (
+                  <div key={idx} className="llm-point">
+                    <div className="llm-point-title">{point.title}</div>
+                    <div className="llm-point-desc">{point.description}</div>
+                    {point.bullets && (
+                      <ul className="llm-bullets">
+                        {point.bullets.map((bullet, i) => (
+                          <li key={i}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {point.example && (
+                      <div className="llm-example"><strong>Example:</strong> {point.example}</div>
+                    )}
+                    {point.result && (
+                      <div className="llm-result"><strong>Result:</strong> {point.result}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
             {detailedContent.examples && detailedContent.examples.map((example, idx) => (
               <div key={idx} className="examples-section">
                 <h2>{example.title}</h2>
@@ -118,12 +143,12 @@ const SubtopicContent = ({ subtopic, topicTitle }) => {
           </div>
         ) : (
           <>
-            {content.overview && (
+            {/* {content.overview && (
               <div className="overview-section">
                 <h2>Overview</h2>
                 <p className="overview-text">{content.overview}</p>
               </div>
-            )}
+            )} */}
 
             {content.examples && (
               <div className="examples-section">
@@ -146,6 +171,16 @@ const SubtopicContent = ({ subtopic, topicTitle }) => {
                 </ul>
               </div>
             )}
+
+              {/* Agentic Advantages Comparison Intro Block for 2.2 */}
+        {subtopic.id === "2.2" && (
+          <div className="agentic-advantages-intro">
+            <h1>2.2 Agentic Advantages Comparison</h1>
+            <p>
+              AI agents represent a significant advancement over traditional LLM interfaces by enabling structured, goal-driven, and adaptable task execution. This section highlights the key comparative advantages that make agents more suitable for real-world applications.
+            </p>
+          </div>
+        )}
 
             {content.advantages && (
               <div className="advantages-section">
@@ -234,6 +269,48 @@ const SubtopicContent = ({ subtopic, topicTitle }) => {
               </div>
             )}
           </>
+        )}
+
+        {/* Scalability & Efficiency Benefits Intro Block for 2.3 */}
+        {subtopic.id === "2.3" && (
+          <div className="scalability-efficiency-intro">
+            <h1>2.3 Scalability & Efficiency Benefits</h1>
+            <p>
+              One of the most compelling reasons to adopt agentic systems over traditional LLM usage is their ability to scale operations and deliver consistent performance with high efficiency. AI agents are designed to operate autonomously, repeatedly, and reliably—making them well-suited for enterprise-scale applications and continuous task automation.
+            </p>
+            <div className="scalability-benefits-list">
+              <div className="scalability-benefit">
+                <h2>1. Parallel Task Execution</h2>
+                <p>Agents can be deployed in large numbers to run multiple tasks in parallel across users, workflows, or processes.</p>
+                <div className="benefit-example"><strong>Example:</strong> A fleet of customer service agents can handle thousands of support tickets simultaneously, each operating independently while adhering to business rules and escalation protocols.</div>
+                <div className="benefit-note">This parallelism enables organizations to serve more users at lower cost and with faster response times, without increasing human overhead.</div>
+              </div>
+              <div className="scalability-benefit">
+                <h2>2. 24/7 Operation</h2>
+                <p>Agents are not constrained by working hours, fatigue, or context switching. They can run continuously without performance degradation.</p>
+                <div className="benefit-example"><strong>Example:</strong> A system monitoring agent can track server health in real time, detect anomalies, and initiate recovery protocols at any time of day, without human supervision.</div>
+                <div className="benefit-note">This ensures constant availability and reliability, particularly in time-critical or global systems.</div>
+              </div>
+              <div className="scalability-benefit">
+                <h2>3. Consistent Decision-Making</h2>
+                <p>Unlike human operators, agents apply rules and reasoning consistently, unaffected by bias, distraction, or emotional factors.</p>
+                <div className="benefit-example"><strong>Example:</strong> A financial analysis agent can assess investment portfolios using the same evaluation criteria every time, ensuring uniformity and reducing errors.</div>
+                <div className="benefit-note">This consistency is crucial in regulated environments where standardized decision-making is essential.</div>
+              </div>
+              <div className="scalability-benefit">
+                <h2>4. Resource Optimization</h2>
+                <p>Agents can intelligently prioritize tasks, allocate computational resources, and avoid redundant effort.</p>
+                <div className="benefit-example"><strong>Example:</strong> A project coordination agent may delay low-priority tasks in favor of urgent requests, dynamically balancing system load for optimal throughput.</div>
+                <div className="benefit-note">This leads to improved operational efficiency and better use of computational and organizational resources.</div>
+              </div>
+              <div className="scalability-benefit">
+                <h2>5. Cost Efficiency at Scale</h2>
+                <p>With initial setup and minimal maintenance, agents can handle workloads that would otherwise require large teams of human workers.</p>
+                <div className="benefit-example"><strong>Example:</strong> A document processing pipeline powered by agents can extract, summarize, and organize legal or medical files at scale, significantly reducing turnaround time and manual labor costs.</div>
+                <div className="benefit-note">This allows organizations to scale operations without scaling headcount.</div>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
