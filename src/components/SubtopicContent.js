@@ -140,6 +140,63 @@ const SubtopicContent = ({ subtopic, topicTitle }) => {
                 <p dangerouslySetInnerHTML={{ __html: detailedContent.summary }} />
               </div>
             )}
+            
+            {detailedContent.summaryTable && (
+              <div className="table-section">
+                <h2>{detailedContent.summaryTable.title}</h2>
+                <table className="comparison-table">
+                  <thead>
+                    <tr>
+                      {detailedContent.summaryTable.headers.map((header, i) => (
+                        <th key={i}>{header}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {detailedContent.summaryTable.rows.map((row, i) => (
+                      <tr key={i}>
+                        {row.map((cell, j) => (
+                          <td key={j}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            
+            {detailedContent.conclusion && (
+              <div className="conclusion-section">
+                <h2>Conclusion</h2>
+                <p dangerouslySetInnerHTML={{ __html: detailedContent.conclusion }} />
+              </div>
+            )}
+
+            {/* Special flowchart for 6.1 Decision Cycle */}
+            {detailedContent.flowchart && subtopic.id === "6.1" && (
+              <div className="decision-cycle-flowchart">
+                <h2>{detailedContent.flowchart.title}</h2>
+                <div className="flowchart-container">
+                  <div className="flowchart-stages">
+                    {detailedContent.flowchart.stages.map((stage, index) => (
+                      <div key={index} className="flowchart-stage">
+                        <div className="stage-number">{index + 1}</div>
+                        <div className="stage-text">{stage}</div>
+                        {index < detailedContent.flowchart.stages.length - 1 && (
+                          <div className="stage-arrow">→</div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flowchart-loop-connection">
+                    <div className="loop-line"></div>
+                    <div className="loop-arrow-right">→</div>
+                    <div className="loop-text">Loop back to Goal Interpretation</div>
+                    <div className="loop-arrow-left">←</div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <>
